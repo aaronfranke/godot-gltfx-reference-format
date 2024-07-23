@@ -1,0 +1,25 @@
+{
+	"asset": {
+		"generator": "Godot 4.3-beta (custom_build) with glTFX support by aaronfranke.",
+		"reference": true,
+		"version": 2
+	},
+	"assets": [
+		{
+			"name": "cube_gltfx_reference",
+			"uri": "models/cube_gltfx_reference.glb"
+		}
+	],
+	"nodes": [
+		{
+			"children": [
+				1
+			],
+			"name": "CubeGLTFXNested"
+		},
+		{
+			"asset": 0,
+			"name": "CubeGLTFXReference"
+		}
+	]
+}

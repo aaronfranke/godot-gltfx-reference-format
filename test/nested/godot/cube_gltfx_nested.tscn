@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcc20jpwbdqh3"]
+
+[ext_resource type="PackedScene" uid="uid://i2t3nhytj48y" path="res://test/cube/godot/cube_gltfx_reference.tscn" id="1_jhtmb"]
+
+[node name="CubeGLTFXNested" type="Node3D"]
+
+[node name="CubeGLTFXReference" parent="." instance=ExtResource("1_jhtmb")]
