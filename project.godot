@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="glTFX Reference Format"
-config/features=PackedStringArray("4.3", "GL Compatibility")
+config/name="glTFX Reference Format Test Project"
+config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [editor_plugins]
