@@ -1,6 +1,6 @@
 {
 	"asset": {
-		"generator": "Godot 4.3-beta (custom_build) with glTFX support by aaronfranke.",
+		"generator": "Godot 4.3-rc (custom_build) with glTFX support by aaronfranke.",
 		"reference": true,
 		"version": 2
 	},

@@ -101,6 +101,9 @@ func _import_generate_godot_nodes(gltfx_node: GLTFXNode, parent: Node, owner: No
 		node.name = _get_unique_name(_unique_node_names, gltfx_node.resource_name)
 		if node is Node3D:
 			node.transform = gltfx_node.transform
+		if node.scene_file_path.is_empty():
+			for descendant in node.find_children("*"):
+				descendant.owner = owner
 	else:
 		# This node does not have an asset, so it's a regular GLTFXNode.
 		node = gltfx_node.to_node()

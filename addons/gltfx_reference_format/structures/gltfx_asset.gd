@@ -52,6 +52,22 @@ func to_node(gltfx_reference: GLTFXReference) -> Node:
 			return null
 		godot_node = gltfx_reference.gltf_document.generate_scene(gltf_state)
 	godot_node.scene_file_path = asset_path
+	# If the GLTFXAsset specifies that it only wants specific nodes, find those.
+	if not nodes.is_empty():
+		var imported_root_node: Node = godot_node
+		if nodes.size() == 1:
+			godot_node = imported_root_node.find_child(nodes[0])
+			if godot_node == null:
+				godot_node = imported_root_node
+			else:
+				godot_node.get_parent().remove_child(godot_node)
+		else:
+			godot_node = Node3D.new()
+			for node_name in nodes:
+				var found: Node = imported_root_node.find_child(node_name)
+				if found != null:
+					found.get_parent().remove_child(found)
+					godot_node.add_child(found)
 	return godot_node
 
 
