@@ -18,3 +18,15 @@ extends RefCounted
 
 ## The GLTFDocument to use for exporting the GLTFX file. Stores settings for exporting the leaf models.
 @export var model_settings := GLTFDocument.new()
+
+
+func to_gltfx_reference() -> GLTFXReference:
+	var gltfx := GLTFXReference.new()
+	gltfx.copyright = copyright
+	gltfx.export_model_format = model_format as GLTFXReference.ExportModelFormat
+	gltfx.export_model_subfolder = model_subfolder
+	gltfx.export_nested_scenes = nested_scene_handling
+	gltfx.gltf_document = model_settings
+	if gltfx.gltf_document == null:
+		gltfx.gltf_document = GLTFDocument.new()
+	return gltfx

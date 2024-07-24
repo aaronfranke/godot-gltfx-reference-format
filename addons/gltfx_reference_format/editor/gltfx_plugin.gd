@@ -70,14 +70,7 @@ func _export_scene_as_gltfx(file_path: String) -> void:
 	if scene_root == null:
 		printerr("glTFX editor export error: Cannot export scene without a root node.")
 		return
-	var gltfx := GLTFXReference.new()
-	gltfx.copyright = _export_settings.copyright
-	gltfx.export_model_format = _export_settings.model_format as GLTFXReference.ExportModelFormat
-	gltfx.export_model_subfolder = _export_settings.model_subfolder
-	gltfx.export_nested_scenes = _export_settings.nested_scene_handling
-	gltfx.gltf_document = _export_settings.model_settings
-	if gltfx.gltf_document == null:
-		gltfx.gltf_document = GLTFDocument.new()
+	var gltfx: GLTFXReference = _export_settings.to_gltfx_reference()
 	var err: Error = gltfx.export_append_from_godot_scene(scene_root)
 	if err != OK:
 		printerr("glTFX editor export: Error while running export_append_from_godot_scene")
