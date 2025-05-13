@@ -28,7 +28,7 @@ enum ExportNestedScenes {
 	## Merge the nested glTFX files into the leaf glTF files, ensuring a flat hierarchy.
 	MERGE_INTO_LEAF_GLTF = 2,
 }
-## With glTF, there is only one file (hierarchy depth of 0). The glTFX format allows for a heirarchy of scenes (depth >0).
+## With glTF, there is only one file (hierarchy depth of 0). The glTFX format allows for a hierarchy of scenes (depth >0).
 ## ALLOW_NESTED_GLTFX may produce hierarchies with depth >1, and the other two options will flatten the hierarchy to depth 1.
 ## This only affects exporting, and only if a child scene is purely referencing other Godot scenes (and therefore could itself become a glTFX).
 var export_nested_scenes: ExportNestedScenes = ExportNestedScenes.ALLOW_NESTED_GLTFX
